@@ -109,7 +109,7 @@ params_model = {
     "num_outputs": 1,
 }
 
-path2train = r"C:\Users\HP\Desktop\research_data\New folder\training_set"
+path2train = r"C:\Users\HP\Desktop\training_set"
 path2weights = "./models/weights.pt"
 path2model = "./models/model.pth"
 
@@ -133,8 +133,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = SegNet(params_model).to(device)
 
 # Optimizer and scheduler
-opt = Adam(model.parameters(), lr=3e-4)
-lr_scheduler = ReduceLROnPlateau(opt, mode='min', factor=0.5, patience=20, verbose=1)
+opt = Adam(model.parameters(), lr=0.001)
+lr_scheduler = ReduceLROnPlateau(opt, mode='min',factor=0.5, patience=20,verbose=1)
 
 # Training parameters
 params_train = {
