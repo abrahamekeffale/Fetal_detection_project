@@ -24,15 +24,15 @@ def login():
     
     with col1:
         st.write("""
-            **Welcome to the Fetal Head Segmentation and Measurement App!**
+            **Welcome to the Fetal Head Segmentation, Measurement,and Classification App!**
 
-            This app is designed to help medical professionals perform fetal head segmentation and measure head circumference (HC) and biparietal diameter (BPD) from ultrasound images. 
+            This app is designed to help medical professionals perform fetal head segmentation and measure head circumference (HC) and biparietal diameter (BPD) from ultrasound images and make classification. 
             Please log in to access the app's features.
         """)
     
     with col2:
         st.write("""
-            **If You have any difficulties Contact Information:**
+            **If You have any difficulties,please Contact us:**
             - **Mobile:** 0912845742
             - **Email:** keffalebrahame2@gmail.com
         """)
