@@ -62,5 +62,5 @@ class SegNet(nn.Module):
         x = F.relu(x)
 
         x = self.conv_out(x)
-        x = torch.sigmoid(x)
+        
         return x 
