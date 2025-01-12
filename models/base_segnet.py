@@ -67,5 +67,3 @@ input_channels = 1  # Grayscale images
 num_classes = 1     # Binary segmentation
 model = SegNet(input_channels=input_channels, num_classes=num_classes)
 
-# Print the model architecture
-print(model)
