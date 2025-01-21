@@ -37,6 +37,10 @@ def calculate_tumor_size(mask_pred, pixel_size):
     return tumor_size_mm
 
 def calculate_head_metrics(mask_pred, pixel_size):
+    import cv2
+    from skimage import measure
+
+    # Calculate head circumference
     contours, _ = cv2.findContours(mask_pred.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     if contours:
         largest_contour = max(contours, key=cv2.contourArea)
@@ -45,10 +49,11 @@ def calculate_head_metrics(mask_pred, pixel_size):
     else:
         head_circumference_cm = 0.0
 
+    # Calculate vertical BPD
     mask_props = measure.regionprops(mask_pred.astype(np.uint8))
     if mask_props:
         bbox = mask_props[0].bbox  # Bounding box (min_row, min_col, max_row, max_col)
-        bpd_pixels = bbox[3] - bbox[1]  # Horizontal axis length in pixels
+        bpd_pixels = bbox[2] - bbox[0]  # Vertical axis length in pixels
         bpd_cm = bpd_pixels * pixel_size  # Convert to centimeters
     else:
         bpd_cm = 0.0
