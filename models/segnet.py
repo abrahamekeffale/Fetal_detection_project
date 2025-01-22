@@ -7,7 +7,8 @@ class SegNet(nn.Module):
         
         C_in, H_in, W_in=params["input_shape"]
         init_f=params["initial_filters"] 
-        num_outputs=params["num_outputs"] 
+        num_outputs=params["num_outputs"]
+        dropout_rate = params.get("dropout_rate", 0.5)
 
         self.conv1 = nn.Conv2d(C_in, init_f, kernel_size=3,stride=1,padding=1)
         self.conv2 = nn.Conv2d(init_f, 2*init_f, kernel_size=3,stride=1,padding=1)
