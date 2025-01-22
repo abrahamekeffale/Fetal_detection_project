@@ -218,7 +218,7 @@ else:
         }
 
         # Add user input for GA
-        ga = st.number_input("Enter Gestational Age (GA) in weeks:", min_value=20, max_value=40, step=1)
+        ga = st.number_input("Enter Gestational Age (GA) in weeks:", min_value=14, max_value=36, step=1)
 
         if uploaded_file is not None and ga in GA_ranges:
             # Perform existing steps: Preprocessing, Segmentation, Measurement
