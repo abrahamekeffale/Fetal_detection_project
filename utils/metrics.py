@@ -1,6 +1,7 @@
 import torch
 import torch.nn.functional as F
 import numpy as np
+import skimage
 from skimage import measure
 import cv2
 
@@ -23,7 +24,7 @@ def metrics_batch(pred, target):
     _, metric = dice_loss(pred, target)
     return metric
 
-def calculate_tumor_size(mask_pred, pixel_size):
+def calculate_head_size(mask_pred, pixel_size):
     image_gray = mask_pred.numpy().astype('uint8') * 255  # Convert binary mask to grayscale (0-255)
     thresh = skimage.filters.threshold_otsu(image_gray)
     tumor_mask = image_gray > thresh  # Binary mask based on threshold
