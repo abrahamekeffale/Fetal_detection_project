@@ -1,41 +1,17 @@
-```markdown
-# Medical Image Segmentation and Analysis
+# Fetal Detection and Classification
 
-This project performs medical image segmentation and analysis using a deep learning model. The project is structured to be modular and easy to use with VS Code.
+This project uses a deep learning model to:
+- Segment ultrasound images
+- Calculate Head Circumference (HC) and Biparietal Diameter (BPD)
+- Classify the fetus into "Normal," "Microcephaly," or "Macrocephaly"
 
-## Project Structure
+## Instructions
 
-```
-medical_image_segmentation/
-│
-├── data/
-│   ├── __init__.py
-│   ├── dataset.py
-│   └── transforms.py
-│
-├── models/
-│   ├── __init__.py
-│   └── segnet.py
-│
-├── utils/
-│   ├── __init__.py
-│   ├── visualization.py
-│   └── metrics.py
-│
-├── train.py
-├── inference.py
-├── app.py
-├── requirements.txt
-└── README.md
-```
+1. Upload an ultrasound image in the app.
+2. View the segmentation mask and calculated measurements (HC and BPD).
+3. Enter the gestational age to classify the fetus.
 
 ## Setup
 
-1. Clone the repository.
-2. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Run the Streamlit app:
-   ```
-   stream
+1. Clone the repository and navigate to the project folder.
+2. Install dependencies:
